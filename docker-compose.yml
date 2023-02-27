@@ -1,0 +1,30 @@
+version: "3"
+services:
+  node:
+    image: pedrotti/python:django
+    container_name: python-api
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8000:8000"
+    environment:
+      DB_DIALECT: 'mysql'
+      DB_HOST: 'dbhost'
+      DB_PORT: '3306'
+      DB_USERNAME: 'root'
+      DB_PASSWORD: 'root'
+      DB_NAME: 'app'
+      JWT_SECRET: '?????'
+    links:
+      - mysql:dbhost
+    network_mode: bridge
+    # command: "tail -f /dev/null"
+  mysql:
+    image: mysql:5.7
+    container_name: python-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: app
+    ports:
+      - 3306:3306
+    network_mode: bridge
