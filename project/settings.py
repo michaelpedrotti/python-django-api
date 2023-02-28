@@ -24,15 +24,24 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
+    # 'django.contrib.admin',
+    # 'django.contrib.auth',
+    # 'django.contrib.contenttypes',
+    # 'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    # 'django.contrib.staticfiles',
     'rest_framework',
     'app'
 ]
+
+# Disable default migrations from django
+# MIGRATION_MODULES = {
+    # 'admin': None, 
+    # 'sessions': None,
+    # 'auth': None,
+    # 'contenttypes': None,
+    # 'default': None,
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
