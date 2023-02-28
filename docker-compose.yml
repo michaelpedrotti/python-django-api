@@ -6,7 +6,7 @@ services:
     volumes:
       - .:/usr/src/app
     ports:
-      - "8000:8000"
+      - "3000:8000"
     environment:
       DB_DIALECT: 'mysql'
       DB_HOST: 'dbhost'
